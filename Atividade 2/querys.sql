@@ -1,3 +1,5 @@
+-- Pergunta 1 - Qual o cliente que mais fez pedidos por ano;
+
 SELECT 
     ano,
     id_cliente,
@@ -24,7 +26,7 @@ FROM (
 WHERE 
     row_num = 1;
     
-    -- 2
+-- Pergunta 2 - Qual o cliente que mais gastou em todos os anos;
     
     SELECT 
     c.id_cliente,
@@ -45,7 +47,8 @@ ORDER BY
     total_gasto DESC
 LIMIT 1;
 
--- 3 
+-- Pergunta 3 - Qual(is) o(s) cliente(s) que trouxe(ram) mais pessoas por ano;
+
 WITH TotalPessoasPorAno AS (
     SELECT
         YEAR(m.data_hora_entrada) AS ano,
@@ -81,7 +84,7 @@ FROM
 WHERE
     row_num = 1;
 
--- 4
+-- Pergunta 4 - Qual a empresa que tem mais funcionarios como clientes do restaurante;
 
 SELECT 
     e.nome_empresa,
@@ -98,7 +101,7 @@ ORDER BY
     total_clientes DESC
 LIMIT 1;
 
--- 5
+-- Pergunta 5 - Qual empresa que tem mais funcionarios que consomem sobremesas no restaurante por ano;
 
 SELECT
     e.nome_empresa,
